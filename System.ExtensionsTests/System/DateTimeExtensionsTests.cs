@@ -99,12 +99,7 @@ namespace System.Tests
 		{
 			DateTime dateTime = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
 			Assert.AreEqual(0, dateTime.ToMilliseconds());
-
-			TimeZoneInfo kstTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Korea Standard Time");
-			DateTime kstDateTime = TimeZoneInfo.ConvertTimeFromUtc(dateTime, kstTimeZone);
-			kstDateTime = kstDateTime.AddHours(-9);
-			Trace.WriteLine(kstDateTime);
-			Assert.AreEqual(-32400000, kstDateTime.ToMilliseconds());
+			Assert.AreEqual(-32400000, dateTime.Previous(TimeGranularityUnit.HOURS, 9).ToMilliseconds());
 		}
 
 		[TestMethod]
@@ -112,12 +107,7 @@ namespace System.Tests
 		{
 			DateTime dateTime = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
 			Assert.AreEqual(0, dateTime.ToTimeSeconds());
-
-			TimeZoneInfo kstTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Korea Standard Time");
-			DateTime kstDateTime = TimeZoneInfo.ConvertTimeFromUtc(dateTime, kstTimeZone);
-			kstDateTime = kstDateTime.AddHours(-9);
-			Trace.WriteLine(kstDateTime);
-			Assert.AreEqual(-32400, kstDateTime.ToTimeSeconds());
+			Assert.AreEqual(-32400, dateTime.Previous(TimeGranularityUnit.HOURS, 9).ToTimeSeconds());
 		}
 
 		[TestMethod]
