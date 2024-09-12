@@ -1,4 +1,5 @@
-﻿using System.Xml;
+﻿using System.Diagnostics;
+using System.Xml;
 
 namespace System.Tests
 {
@@ -102,6 +103,7 @@ namespace System.Tests
 			TimeZoneInfo kstTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Korea Standard Time");
 			DateTime kstDateTime = TimeZoneInfo.ConvertTimeFromUtc(dateTime, kstTimeZone);
 			kstDateTime = kstDateTime.AddHours(-9);
+			Trace.WriteLine(kstDateTime);
 			Assert.AreEqual(-32400000, kstDateTime.ToMilliseconds());
 		}
 
@@ -114,6 +116,7 @@ namespace System.Tests
 			TimeZoneInfo kstTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Korea Standard Time");
 			DateTime kstDateTime = TimeZoneInfo.ConvertTimeFromUtc(dateTime, kstTimeZone);
 			kstDateTime = kstDateTime.AddHours(-9);
+			Trace.WriteLine(kstDateTime);
 			Assert.AreEqual(-32400, kstDateTime.ToTimeSeconds());
 		}
 

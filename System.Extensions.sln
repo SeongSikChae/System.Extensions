@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35303.130
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "System.Extensions", "System.Extensions\System.Extensions.csproj", "{9F203596-50BD-4B0A-B0B6-04405FEEE99D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "System.Extensions", "System.Extensions\System.Extensions.csproj", "{9F203596-50BD-4B0A-B0B6-04405FEEE99D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "System.ExtensionsTests", "System.ExtensionsTests\System.ExtensionsTests.csproj", "{01256DE5-592E-4789-95E9-E125126CAFCA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "System.ExtensionsTests", "System.ExtensionsTests\System.ExtensionsTests.csproj", "{01256DE5-592E-4789-95E9-E125126CAFCA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
