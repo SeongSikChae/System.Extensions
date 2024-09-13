@@ -12,14 +12,15 @@
 		<RepositoryUrl>https://github.com/SeongSikChae/System.Extensions.git</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<JavaExec>"$(JAVA_HOME)/bin/java"</JavaExec>
-		<AntlrJarPath>antlr-4.13.1-complete.jar</AntlrJarPath>
+		<AntlrJarPath>antlr-4.13.2-complete.jar</AntlrJarPath>
 	</PropertyGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Antlr4.Runtime.Standard" Version="4.13.1" />
 	</ItemGroup>
 
-	<Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+	<Target Name="GenerateCodeANTLR" BeforeTargets="PreBuildEvent">
+		<Exec Command="curl -o ../antlr-4.13.2-complete.jar https://www.antlr.org/download/antlr-4.13.2-complete.jar" />
 		<Exec Command="$(JavaExec) -jar $(ProjectDir)../$(AntlrJarPath) -Dlanguage=CSharp -package System.RelativeTime.Parser.Compiler -visitor $(ProjectDir)System/RelativeTime/Parser/Compiler/RelativeTimeExpression.g4 -o $(ProjectDir)System/RelativeTime/Parser/Compiler" ConsoleToMSBuild="true" />
 	</Target>
 </Project>

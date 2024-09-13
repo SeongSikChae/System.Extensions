@@ -23,10 +23,6 @@ jobs:
         java-version: '11'
         distribution: 'microsoft'
 
-    - name: Install ANTLR
-      run: |
-        wget https://www.antlr.org/download/antlr-4.13.2-complete.jar
-
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
