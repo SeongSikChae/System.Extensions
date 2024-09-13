@@ -27,10 +27,6 @@ jobs:
       run: |
         wget https://www.antlr.org/download/antlr-4.13.2-complete.jar
 
-    - name: Generate code using ANTLR
-      run: |
-        java -jar "antlr-4.13.2-complete.jar" -Dlanguage=CSharp -package System.RelativeTime.Compiler -visitor "./System.Extensions/System/RelativeTime/Compiler/RelativeTimeExpression.g4"
-
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:

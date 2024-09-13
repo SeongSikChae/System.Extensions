@@ -1,6 +1,5 @@
 grammar RelativeTimeExpression;
 
-
 relativeTimeExpression : nowPart? modifierPart? snapPart?;
 nowPart : 'now';
 modifierPart : operator factor? timeUnit;
