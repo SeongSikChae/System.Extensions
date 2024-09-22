@@ -21,7 +21,7 @@
 
 	<Target Name="GenerateCodeANTLR" BeforeTargets="PreBuildEvent">
 		<Exec Command="curl -o ../antlr-4.13.2-complete.jar https://www.antlr.org/download/antlr-4.13.2-complete.jar" />
-		<Exec Command="$(JavaExec) -jar $(ProjectDir)../$(AntlrJarPath) -Dlanguage=CSharp -package System.RelativeTime.Parser.Compiler -visitor $(ProjectDir)System/RelativeTime/Parser/Compiler/RelativeTimeExpression.g4 -o $(ProjectDir)System/RelativeTime/Parser/Compiler" ConsoleToMSBuild="true" />
+		<Exec Command="$(JavaExec) -jar $(ProjectDir)../$(AntlrJarPath) -Dlanguage=CSharp -package System.RelativeTime.Parser.Compiler -visitor $(ProjectDir)System/RelativeTime/Parser/Compiler/Expression.g4 -o $(ProjectDir)System/RelativeTime/Parser/Compiler" ConsoleToMSBuild="true" />
 	</Target>
 
 	<Target Name="ANTLRGenerateCodeClean" AfterTargets="Clean">

@@ -168,7 +168,7 @@
 		/// <returns>Snapped DateTime</returns>
 		public static DateTime Snap(this DateTime dateTime, long interval)
 		{
-			long time = dateTime.ToMilliseconds();
+			long time = dateTime.ToUniversalTime().ToMilliseconds();
 			return (time - (time % interval)).FromUnixTimeMilliseconds(dateTime.Kind);
 		}
 
