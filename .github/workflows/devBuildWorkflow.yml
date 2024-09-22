@@ -40,7 +40,7 @@ jobs:
 
     - name: Generate code using ANTLR
       run: |
-        java -jar "antlr-4.13.2-complete.jar" -Dlanguage=CSharp -package System.RelativeTime.Compiler -visitor "./System.Extensions/System/RelativeTime/Compiler/Expression.g4"
+        java -jar "antlr-4.13.2-complete.jar" -Dlanguage=CSharp -package System.RelativeTime.Parser.Compiler -visitor "./System.Extensions/System/RelativeTime/Parser/Compiler/Expression.g4"
 
     - name: Build
       run: dotnet build --no-restore
