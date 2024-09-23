@@ -13,6 +13,8 @@
 		<RepositoryType>git</RepositoryType>
 		<JavaExec>"$(JAVA_HOME)/bin/java"</JavaExec>
 		<AntlrJarPath>antlr-4.13.2-complete.jar</AntlrJarPath>
+		<Description>.NET System namespace Extensions</Description>
+		<PackageProjectUrl>https://github.com/SeongSikChae/System.Extensions.git</PackageProjectUrl>
 	</PropertyGroup>
 
 	<ItemGroup>
