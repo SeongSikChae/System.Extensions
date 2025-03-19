@@ -10,8 +10,7 @@ namespace System.RelativeTime.Ast
 		/// <summary>
 		/// Relative Time Expression Visitor Accept
 		/// </summary>
-		/// <param name="visitor">Relative Time Expression Visitor</param>
-		void Accept(IRelativeTimeExpressionVisitor visitor);
+		void Accept<TContext>(IRelativeTimeExpressionVisitor<TContext> visitor, TContext context) where TContext : IRelativeTimeExpressionContext;
 
 		/// <summary>
 		/// Relative Time Expression AST
@@ -37,10 +36,9 @@ namespace System.RelativeTime.Ast
 			/// <summary>
 			/// Relative Time Expression Visitor Accept
 			/// </summary>
-			/// <param name="visitor">Relative Time Expression Visitor</param>
-			public void Accept(IRelativeTimeExpressionVisitor visitor)
+			public void Accept<TContext>(IRelativeTimeExpressionVisitor<TContext> visitor, TContext context) where TContext : IRelativeTimeExpressionContext
 			{
-				visitor.Visit(this);
+				visitor.Visit(this, context);
 			}
 
 			/// <summary>
@@ -68,10 +66,9 @@ namespace System.RelativeTime.Ast
 			/// <summary>
 			/// Relative Time Expression Visitor Accept
 			/// </summary>
-			/// <param name="visitor">Relative Time Expression Visitor</param>
-			public void Accept(IRelativeTimeExpressionVisitor visitor)
+			public void Accept<TContext>(IRelativeTimeExpressionVisitor<TContext> visitor, TContext context) where TContext : IRelativeTimeExpressionContext
 			{
-				visitor.Visit(this);
+				visitor.Visit(this, context);
 			}
 
 			/// <summary>
@@ -123,10 +120,9 @@ namespace System.RelativeTime.Ast
 			/// <summary>
 			/// Relative Time Expression Visitor Accept
 			/// </summary>
-			/// <param name="visitor">Relative Time Expression Visitor</param>
-			public void Accept(IRelativeTimeExpressionVisitor visitor)
+			public void Accept<TContext>(IRelativeTimeExpressionVisitor<TContext> visitor, TContext context) where TContext : IRelativeTimeExpressionContext
 			{
-				visitor.Visit(this);
+				visitor.Visit(this, context);
 			}
 
 			/// <summary>
@@ -228,10 +224,9 @@ namespace System.RelativeTime.Ast
 			/// <summary>
 			/// Relative Time Expression Visitor Accept
 			/// </summary>
-			/// <param name="visitor">Relative Time Expression Visitor</param>
-			public void Accept(IRelativeTimeExpressionVisitor visitor)
+			public void Accept<TContext>(IRelativeTimeExpressionVisitor<TContext> visitor, TContext context) where TContext : IRelativeTimeExpressionContext
 			{
-				visitor.Visit(this);
+				visitor.Visit(this, context);
 			}
 
 			/// <summary>
