@@ -1,4 +1,4 @@
-﻿using System.Diagnostics;
+using System.Diagnostics;
 
 namespace System.PeriodicTime.Tests
 {
@@ -23,7 +23,7 @@ namespace System.PeriodicTime.Tests
 			{
 				Trace.WriteLine(interval);
 			}
-			Assert.AreEqual(59, list.Count);
+			Assert.AreEqual(60, list.Count);
 			list = PeriodicTimeInterval.GetToDoIntervals(PeriodicTimeGranularity.Of("PT1M"), PeriodicTimeGranularity.Of("PT1M"), PeriodicTimeGranularity.Of("PT1H"), list[list.Count - 1], DateTime.MinValue.AddDays(1));
 			Assert.AreEqual(0, list.Count);
 		}

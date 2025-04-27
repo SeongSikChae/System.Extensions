@@ -1,4 +1,4 @@
-﻿namespace System.PeriodicTime
+namespace System.PeriodicTime
 {
 	/// <summary>
 	/// Periodic Time Interval (System.DateTime[Start], System.DateTime[End])
@@ -51,15 +51,18 @@
 		/// <exception cref="Exception"></exception>
 		public static List<PeriodicTimeInterval> GetToDoIntervals(PeriodicTimeGranularity period, PeriodicTimeGranularity delay, PeriodicTimeGranularity retroactive, PeriodicTimeInterval? lastExecutionInterval, DateTime now)
 		{
+			DateTime endTime = period.Next(period.Snap(now));
+			endTime = period.Snap(endTime.Previous(delay.Unit, delay.Factor));
+
 			List<PeriodicTimeInterval> l = new List<PeriodicTimeInterval>();
-			DateTime initialTime = period.Snap(now.Previous(retroactive.Unit, retroactive.Factor));
-			DateTime startTime = initialTime;
+			DateTime startTime = period.Snap(endTime.Previous(retroactive.Unit, retroactive.Factor));
 			if (lastExecutionInterval is not null && lastExecutionInterval.ValidInterval(period))
 			{
-				if (lastExecutionInterval.End.CompareTo(startTime) > 0)
-					startTime = lastExecutionInterval.End;
+				DateTime nextOfLast = lastExecutionInterval.End;
+				if (nextOfLast.CompareTo(startTime) > 0)
+					startTime = nextOfLast;
 			}
-			DateTime endTime = period.Snap(now.Previous(delay.Unit, delay.Factor));
+
 			DateTime time = startTime;
 			while (time.CompareTo(endTime) < 0)
 			{
@@ -67,8 +70,13 @@
 				l.Add(new PeriodicTimeInterval(time, next));
 				time = next;
 			}
-			if (lastExecutionInterval is null && l.Count == 0)
+
+			if (startTime.CompareTo(endTime) == 0)
+				return l;
+
+			if (lastExecutionInterval == null && l.Count == 0)
 				throw new Exception("illegal period paramters : initial must be older");
+
 			return l;
 		}
 	}
