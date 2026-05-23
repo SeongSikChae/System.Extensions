@@ -15,8 +15,9 @@
 		<AntlrJarPath>antlr-4.13.2-complete.jar</AntlrJarPath>
 		<Description>.NET System namespace Extensions</Description>
 		<PackageProjectUrl>https://github.com/SeongSikChae/System.Extensions.git</PackageProjectUrl>
-		<PackageId>$(AssemblyName)</PackageId>
+		<PackageId>Biz.Bizadm.$(AssemblyName)</PackageId>
 		<AssemblyName>Biz.Bizadm.$(MSBuildProjectName)</AssemblyName>
+		<AssemblyTitle></AssemblyTitle>
 	</PropertyGroup>
 
 	<ItemGroup>
