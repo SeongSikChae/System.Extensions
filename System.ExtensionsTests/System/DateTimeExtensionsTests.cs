@@ -61,7 +61,7 @@ namespace System.Tests
 		{
 			DateTime baseTime = new DateTime(2024, 9, 12, 12, 59, 59, 555);
 			Assert.AreEqual(baseTime, baseTime.Next(TimeGranularityUnit.SECONDS, 0));
-			Assert.ThrowsException<ArgumentException>(() =>
+			Assert.ThrowsExactly<ArgumentException>(() =>
 			{
 				baseTime.Next(TimeGranularityUnit.SECONDS, -1);
 			});
@@ -80,7 +80,7 @@ namespace System.Tests
 		{
 			DateTime baseTime = new DateTime(2024, 9, 12, 12, 59, 59, 555);
 			Assert.AreEqual(baseTime, baseTime.Previous(TimeGranularityUnit.SECONDS, 0));
-			Assert.ThrowsException<ArgumentException>(() =>
+			Assert.ThrowsExactly<ArgumentException>(() =>
 			{
 				baseTime.Previous(TimeGranularityUnit.SECONDS, -1);
 			});

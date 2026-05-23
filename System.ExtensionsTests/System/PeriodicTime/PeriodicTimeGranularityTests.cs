@@ -9,7 +9,7 @@ namespace System.PeriodicTime.Tests
 		public void PeriodicTimeGranularityTest()
 		{
 			_ = new PeriodicTimeGranularity(TimeGranularityUnit.SECONDS, 65, false);
-			Assert.ThrowsException<ArgumentException>(() =>
+			Assert.ThrowsExactly<ArgumentException>(() =>
 			{
 				new PeriodicTimeGranularity(TimeGranularityUnit.SECONDS, 65);
 			});
@@ -25,7 +25,7 @@ namespace System.PeriodicTime.Tests
 		[TestMethod]
 		public void SnapTest()
 		{
-			Assert.ThrowsException<Exception>(() =>
+			Assert.ThrowsExactly<Exception>(() =>
 			{
 				new PeriodicTimeGranularity(TimeGranularityUnit.SECONDS, 65, false).Snap(DateTime.Now);
 			});
@@ -57,7 +57,7 @@ namespace System.PeriodicTime.Tests
 		[TestMethod]
 		public void EqualsTest()
 		{
-			Assert.AreNotEqual(new PeriodicTimeGranularity(TimeGranularityUnit.SECONDS, 31), null);
+			Assert.AreNotEqual(null, new PeriodicTimeGranularity(TimeGranularityUnit.SECONDS, 31));
 			Assert.AreEqual(new PeriodicTimeGranularity(TimeGranularityUnit.SECONDS, 31), new PeriodicTimeGranularity(TimeGranularityUnit.SECONDS, 31));
 		}
 

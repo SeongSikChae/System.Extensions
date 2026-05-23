@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>net8.0</TargetFramework>
+		<TargetFramework>net10.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<RootNamespace />
@@ -15,6 +15,8 @@
 		<AntlrJarPath>antlr-4.13.2-complete.jar</AntlrJarPath>
 		<Description>.NET System namespace Extensions</Description>
 		<PackageProjectUrl>https://github.com/SeongSikChae/System.Extensions.git</PackageProjectUrl>
+		<PackageId>$(AssemblyName)</PackageId>
+		<AssemblyName>Biz.Bizadm.$(MSBuildProjectName)</AssemblyName>
 	</PropertyGroup>
 
 	<ItemGroup>

@@ -62,7 +62,7 @@
 				Assert.AreEqual(1, spec.MaxFactor);
 			}
 
-			Assert.ThrowsException<UnsupportedTimeGranularityUnitException>(() =>
+			Assert.ThrowsExactly<UnsupportedTimeGranularityUnitException>(() =>
 			{
 				TimeGranularitySpec.Of((TimeGranularityUnit)8);
 			});
