@@ -18,7 +18,20 @@
 		<PackageId>Biz.Bizadm.$(AssemblyName)</PackageId>
 		<AssemblyName>Biz.Bizadm.$(MSBuildProjectName)</AssemblyName>
 		<AssemblyTitle></AssemblyTitle>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
 	</PropertyGroup>
+
+	<ItemGroup>
+	  <None Include="..\LICENSE">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	  <None Include="..\README.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Antlr4.Runtime.Standard" Version="4.13.1" />
